@@ -1,0 +1,13 @@
+Description,,Summary Amt.
+Beginning balance as of 05/22/2025,,"2,238.85"
+Total credits,,"5,983.38"
+Total debits,,"-3,128.41"
+Ending balance as of 06/20/2025,,"5,093.82"
+
+Date,Description,Amount,Running Bal.
+05/22/2025,Beginning balance as of 05/22/2025,,"2,238.85"
+06/12/2025,"Zelle payment to XUE SHIMING Conf# e593di8iy","-2,200.00","38.85"
+06/13/2025,"Online Banking transfer from SAV 7913 Confirmation# XXXXX77348","4,003.10","4,041.95"
+06/13/2025,"DISCOVER DES:E-PAYMENT ID:5257 INDN:PENG NINGCHUAN CO ID:XXXXX20270 WEB","-683.41","3,358.54"
+06/17/2025,"FARMERS INS DES:EFT PYMT ID:dXXXXX7036 INDN:Ningchuan Peng CO ID:XXXXX51302 PPD","-245.00","3,113.54"
+06/20/2025,"C185529 LUMINYS DES:DIR DEP ID:P822F8CF73C1866 INDN:PENG NINGCHUAN LEO CO ID:XXXXX83648 PPD","1,980.28","5,093.82"
