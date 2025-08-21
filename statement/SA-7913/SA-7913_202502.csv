@@ -1,0 +1,10 @@
+Description,,Summary Amt.
+Beginning balance as of 01/09/2025,,"30,001.22"
+Total credits,,"0.80"
+Total debits,,"-5,000.00"
+Ending balance as of 02/05/2025,,"25,002.02"
+
+Date,Description,Amount,Running Bal.
+01/09/2025,Beginning balance as of 01/09/2025,,"30,001.22"
+01/15/2025,"Online Banking transfer to CHK 8540 Confirmation# XXXXX45221","-5,000.00","25,001.22"
+02/05/2025,"Interest Earned","0.80","25,002.02"

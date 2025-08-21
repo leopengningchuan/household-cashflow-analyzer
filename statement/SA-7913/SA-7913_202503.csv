@@ -1,0 +1,14 @@
+Description,,Summary Amt.
+Beginning balance as of 02/06/2025,,"25,002.02"
+Total credits,,"10,000.56"
+Total debits,,"-25,002.02"
+Ending balance as of 03/07/2025,,"10,000.56"
+
+Date,Description,Amount,Running Bal.
+02/06/2025,Beginning balance as of 02/06/2025,,"25,002.02"
+02/12/2025,"Online Banking transfer to CHK 9084 Confirmation# XXXXX41866","-2,502.02","22,500.00"
+02/13/2025,"FID BKG SVC LLC DES:MONEYLINE ID:ZXXXXX68711GG13 INDN:NINGCHUAN PENG CO ID:XXXXX41375 PPD","10,000.00","32,500.00"
+02/13/2025,"Online Banking transfer to CHK 8540 Confirmation# XXXXX69468","-2,500.00","30,000.00"
+02/18/2025,"Online Banking transfer to CHK 8540 Confirmation# XXXXX32460","-5,000.00","25,000.00"
+02/19/2025,"FID BKG SVC LLC DES:MONEYLINE ID:ZXXXXX68714NDMY INDN:NINGCHUAN PENG CO ID:XXXXX04600 PPD","-15,000.00","10,000.00"
+03/07/2025,"Interest Earned","0.56","10,000.56"

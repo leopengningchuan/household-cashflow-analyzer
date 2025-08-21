@@ -1,0 +1,15 @@
+Description,,Summary Amt.
+Beginning balance as of 12/07/2024,,"65,002.49"
+Total credits,,"55,093.21"
+Total debits,,"-90,094.48"
+Ending balance as of 01/08/2025,,"30,001.22"
+
+Date,Description,Amount,Running Bal.
+12/07/2024,Beginning balance as of 12/07/2024,,"65,002.49"
+12/10/2024,"FID BKG SVC LLC DES:MONEYLINE ID:Z30631687 V67GL INDN:NINGCHUAN PENG CO ID:XXXXX41383 PPD","-30,000.00","35,002.49"
+12/16/2024,"Online Banking transfer from CHK 8540 Confirmation# XXXXX70750","50,000.00","85,002.49"
+12/17/2024,"FID BKG SVC LLC DES:MONEYLINE ID:Z30631687 W3MID INDN:NINGCHUAN PENG CO ID:XXXXX41383 PPD","-60,002.49","25,000.00"
+12/19/2024,"Online Banking transfer from CHK 9084 Confirmation# XXXXX82011","91.99","25,091.99"
+12/19/2024,"Online Banking payment to CRD 4253 Confirmation# XXXXX52640","-91.99","25,000.00"
+12/30/2024,"Online Banking transfer from CHK 8540 Confirmation# XXXXX85245","5,000.00","30,000.00"
+01/08/2025,"Interest Earned","1.22","30,001.22"
