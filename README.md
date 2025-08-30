@@ -13,6 +13,7 @@ Analyze and track household cashflow by consolidating income and expenses
   - [5. Transaction Offset](#5-transaction-offset)
   - [6. Mapping Old File Information](#6-mapping-old-file-information)
   - [7. Export Results](#7-export-results)
+  - [8. Online Dashboard](#8-online-dashboard)
 - [Future Improvements](#future-improvements)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -31,9 +32,12 @@ Configuration & Metadata:
 - `LICENSE.txt` – license information
 - `.gitignore` – git ignore config
 - `.gitattributes` – git attributes config
+- `.gitmodules` – git submodules config
 
 Core Logic:
+- [`utils/`](https://github.com/leopengningchuan/personal_utils) – submodule used
 - `statement_cleaning.ipynb` – notebook for cleaning and unifying the bank statements
+- [`Tableau Public dashboard: Household Cashflow Analyzer`](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy) – a dashboard based on the generated data in Tableau Public
 
 ## Instructions
 
@@ -41,7 +45,7 @@ Core Logic:
 - `pandas`, `datetime`: for data manipulation
 - `os`: for file path handling
 - `dotenv`: for loading environment variables from a `.env` file
-- `oauth2client`, `gspread`: for exporting the data to Google Sheet
+- [`personal_utils.google_api_utils`](https://github.com/leopengningchuan/personal_utils): for updating dataset to Google Sheet
 
 ### 2. Datasets Used
 This project utilizes the bank account statements in CSV format from [*Bank of America (BOA)*](https://www.bankofamerica.com/) and [*Discover*](https://www.discover.com/).
@@ -51,7 +55,7 @@ Due to privacy, the raw dataset are not shared in this repository.
 ### 3. Statement Data Cleaning
 Transaction records from bank debit, credit, and savings account statements are ingested and standardized by harmonizing column names, parsing dates, and generating unique transaction IDs. Column values are converted into consistent and meaningful formats. After initialization, only transactions occurring on or after the specified start date are retained to ensure consistency in subsequent analysis. Finally, all datasets are consolidated into a single unified dataset.
 
-### 4.Transaction Categorization 
+### 4. Transaction Categorization
 Transaction descriptions are mapped into standardized categories (e.g., Rent, Entertainment, Utility) as column `Type` using a keyword-based mapping. Special cases such as internal transfers between accounts are also normalized to ensure consistency.
 
 ### 5. Transaction Offset
@@ -60,19 +64,27 @@ Transaction types are simplified into broader general categories as column `Gene
 ### 6. Mapping Old File Information
 The current dataset is merged with a previously saved XLSX file based on transaction IDs, carrying forward existing `Type` and `General_Type` labels where available. By reusing past classifications, it ensures consistency across dataset versions and avoids repeating manual labeling work.
 
-### 7.Export Results
+### 7. Export Results
 The final cleaned and validated dataset is exported into an XLSX file with a timestamped filename, ensuring that each run generates a uniquely identifiable output for record keeping and future analysis.
 
-The dataset is also published to a Google Sheet, ensuring that Tableau Public reflects the latest data upon refresh for further analysis.
+The dataset is also published to a Google Sheet, using `gsheet_upload()` from the `utils.google_api_utils` module to ensure that Tableau Public reflects the latest data upon refresh for further analysis.
+
+The `utils/` folder is included as a Git submodule and contains a reusable function library maintained in the [`personal_utils`](https://github.com/leopengningchuan/personal_utils). You can refer to that repository for detailed function documentation and personal notes.
+
+### 8. Online Dashboard
+The cleaned dataset powers an interactive Tableau Public dashboard of household cashflow. Analysis can be conducted through date ranges, income/expense type, and spender to reveal monthly trends and breakdowns.
+
+Please view the dashboard here: [*Tableau Public dashboard: Household Cashflow Analyzer*](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy)
 
 ## Future Improvements
-- **Automated Data Ingestion**: Implement scripts to directly parse PDF or XLSX statements and update the dataset without manual CSV conversion.  
-- **Visualization Dashboard**: Build interactive dashboards (e.g., with Power BI or Tableau) to provide clear insights into spending patterns, income trends, and savings progress.  
+- **Automated Data Ingestion**: Implement scripts to directly parse PDF or XLSX statements and update the dataset without manual CSV conversion.
+- **Visualization Dashboard**: Build interactive dashboards (e.g., with Power BI or Tableau) to provide clear insights into spending patterns, income trends, and savings progress.
 - **Forecasting Models**: Incorporate time-series forecasting techniques to project future cashflow, helping with budgeting and long-term financial planning.
 
 ## Acknowledgements
-- Thanks to [*Bank of America (BOA)*](https://www.bankofamerica.com/) for the debit, credit, and savings account statement data used in this project.  
-- Thanks to [*Discover*](https://www.discover.com/) for the credit card account statement data used in this project.  
+- Thanks to [*Bank of America (BOA)*](https://www.bankofamerica.com/) for the debit, credit, and savings account statement data used in this project.
+- Thanks to [*Discover*](https://www.discover.com/) for the credit card account statement data used in this project.
+- Thanks to [*Tableau Public*](https://public.tableau.com) for providing a online platform to share dashboards.
 
 ## License
 This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/household-cashflow-analyzer?tab=MIT-1-ov-file) file for details.
