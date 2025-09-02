@@ -37,7 +37,7 @@ Configuration & Metadata:
 Core Logic:
 - [`utils/`](https://github.com/leopengningchuan/personal_utils) – submodule used
 - `statement_cleaning.ipynb` – notebook for cleaning and unifying the bank statements
-- [`Tableau Public dashboard: Household Cashflow Analyzer`](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy) – a dashboard based on the generated data in Tableau Public
+- [`Household Cashflow Analyzer`](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy) – a dashboard based on the generated data in Tableau Public
 
 ## Instructions
 
@@ -59,10 +59,12 @@ Transaction records from bank debit, credit, and savings account statements are 
 Transaction descriptions are mapped into standardized categories (e.g., Rent, Entertainment, Utility) as column `Type` using a keyword-based mapping. Special cases such as internal transfers between accounts are also normalized to ensure consistency.
 
 ### 5. Transaction Offset
-Transaction types are simplified into broader general categories as column `General_Type`.To maintain data quality, rows with missing or zero transaction amounts are excluded, and categories whose aggregated amounts sum to zero are removed. Rows with missing or zero transaction values and categories whose amounts sum to zero are removed are excluded to keep the dataset meaningful.
+To maintain data quality, rows with missing or zero transaction amounts are excluded, and categories whose aggregated amounts sum to zero are removed.
 
 ### 6. Mapping Old File Information
 The current dataset is merged with a previously saved XLSX file based on transaction IDs, carrying forward existing `Type` and `General_Type` labels where available. By reusing past classifications, it ensures consistency across dataset versions and avoids repeating manual labeling work.
+
+Transaction types are simplified into broader general categories as column `General_Type`.
 
 ### 7. Export Results
 The final cleaned and validated dataset is exported into an XLSX file with a timestamped filename, ensuring that each run generates a uniquely identifiable output for record keeping and future analysis.
@@ -74,7 +76,7 @@ The `utils/` folder is included as a Git submodule and contains a reusable funct
 ### 8. Online Dashboard
 The cleaned dataset powers an interactive Tableau Public dashboard of household cashflow. Analysis can be conducted through date ranges, income/expense type, and spender to reveal monthly trends and breakdowns.
 
-Please view the dashboard here: [*Tableau Public dashboard: Household Cashflow Analyzer*](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy)
+Please view the dashboard here: [*Household Cashflow Analyzer*](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy)
 
 ## Future Improvements
 - **Automated Data Ingestion**: Implement scripts to directly parse PDF or XLSX statements and update the dataset without manual CSV conversion.
