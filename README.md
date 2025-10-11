@@ -62,9 +62,9 @@ Transaction descriptions are mapped into standardized categories (e.g., Rent, En
 To maintain data quality, rows with missing or zero transaction amounts are excluded, and categories whose aggregated amounts sum to zero are removed.
 
 ### 6. Mapping Old File Information
-The current dataset is merged with a previously saved XLSX file based on transaction IDs, carrying forward existing `Type` and `General_Type` labels where available. By reusing past classifications, it ensures consistency across dataset versions and avoids repeating manual labeling work.
+The current dataset is merged with a previously saved XLSX file based on transaction IDs, carrying forward existing `Amount`, `Type` and `General_Type` labels where available. By reusing past classifications, it ensures consistency across dataset versions and avoids repeating manual labeling work. Transaction types are simplified into broader general categories as column `General_Type`.
 
-Transaction types are simplified into broader general categories as column `General_Type`.
+In addition, the script checks that rows with `Type = 'Omit: others'` sum to 0, and that `Original_Amount` and `Amount` totals match. If either check fails, a `ValueError` is raised.
 
 ### 7. Export Results
 The final cleaned and validated dataset is exported into an XLSX file with a timestamped filename, ensuring that each run generates a uniquely identifiable output for record keeping and future analysis.
