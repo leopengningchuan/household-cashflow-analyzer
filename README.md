@@ -43,7 +43,7 @@ Core Logic:
 
 ### 1. Packages Used
 - `pandas`, `datetime`: for data manipulation
-- `os`: for file path handling
+- `os`, `sys`: for file path handling
 - `dotenv`: for loading environment variables from a `.env` file
 - [`personal_utils.google_api_utils`](https://github.com/leopengningchuan/personal_utils): for updating dataset to Google Sheet
 
@@ -57,6 +57,8 @@ Transaction records from bank debit, credit, and savings account statements are 
 
 ### 4. Transaction Categorization
 Transaction descriptions are mapped into standardized categories (e.g., Rent, Entertainment, Utility) as column `Type` using a keyword-based mapping. Special cases such as internal transfers between accounts are also normalized to ensure consistency.
+
+Due to privacy, the mapping method is not shared in this repository.
 
 ### 5. Transaction Offset
 To maintain data quality, rows with missing or zero transaction amounts are excluded, and categories whose aggregated amounts sum to zero are removed.
