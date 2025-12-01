@@ -64,12 +64,12 @@ Due to privacy, the mapping method is not shared in this repository.
 To maintain data quality, rows with missing or zero transaction amounts are excluded, and categories whose aggregated amounts sum to zero are removed.
 
 ### 6. Mapping Old File Information
-The current dataset is merged with a previously saved XLSX file based on transaction IDs, carrying forward existing `Amount`, `Type` and `General_Type` labels where available. By reusing past classifications, it ensures consistency across dataset versions and avoids repeating manual labeling work. Transaction types are simplified into broader general categories as column `General_Type`.
+The current dataset is merged with a previously saved CSV file based on transaction IDs, carrying forward existing `Amount`, `Type` and `General_Type` labels where available. By reusing past classifications, it ensures consistency across dataset versions and avoids repeating manual labeling work. Transaction types are simplified into broader general categories as column `General_Type`.
 
 In addition, the script checks that rows with `Type = 'Omit: others'` sum to 0, and that `Original_Amount` and `Amount` totals match. If either check fails, a `ValueError` is raised.
 
 ### 7. Export Results
-The final cleaned and validated dataset is exported into an XLSX file with a timestamped filename, ensuring that each run generates a uniquely identifiable output for record keeping and future analysis.
+The final cleaned and validated dataset is exported into an CSV file with a timestamped filename, ensuring that each run generates a uniquely identifiable output for record keeping and future analysis.
 
 The dataset is also published to a Google Sheet, using `gsheet_upload()` from the `utils.google_api_utils` module to ensure that Tableau Public reflects the latest data upon refresh for further analysis.
 
@@ -81,8 +81,7 @@ The cleaned dataset powers an interactive Tableau Public dashboard of household 
 Please view the dashboard here: [*Household Cashflow Analyzer*](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy)
 
 ## Future Improvements
-- **Automated Data Ingestion**: Implement scripts to directly parse PDF or XLSX statements and update the dataset without manual CSV conversion.
-- **Visualization Dashboard**: Build interactive dashboards (e.g., with Power BI or Tableau) to provide clear insights into spending patterns, income trends, and savings progress.
+- **Automated Data Ingestion**: Implement scripts to directly download PDF or XLSX statements and update the dataset without manual operation.
 - **Forecasting Models**: Incorporate time-series forecasting techniques to project future cashflow, helping with budgeting and long-term financial planning.
 
 ## Acknowledgements
