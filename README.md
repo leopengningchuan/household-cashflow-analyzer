@@ -14,6 +14,7 @@ Analyze and track household cashflow by consolidating income and expenses
   - [6. Mapping Old File Information](#6-mapping-old-file-information)
   - [7. Export Results](#7-export-results)
   - [8. Online Dashboard](#8-online-dashboard)
+  - [9. Sankey Chart](#9-sankey-chart)
 - [Future Improvements](#future-improvements)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -37,14 +38,16 @@ Configuration & Metadata:
 Core Logic:
 - [`utils/`](https://github.com/leopengningchuan/personal_utils) – submodule used
 - `statement_cleaning.ipynb` – notebook for cleaning and unifying the bank statements
+- `sankey_chart.ipynb` – notebook for generating a sankey chart based on the data
 - [`Household Cashflow Analyzer`](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy) – a dashboard based on the generated data in Tableau Public
 
 ## Instructions
 
 ### 1. Packages Used
 - `pandas`, `datetime`: for data manipulation
-- `os`, `sys`: for file path handling
+- `os`, `sys`, `glob`: for file path handling
 - `dotenv`: for loading environment variables from a `.env` file
+- `plotly`: for generating charts
 - [`personal_utils.google_api_utils`](https://github.com/leopengningchuan/personal_utils): for updating dataset to Google Sheet
 
 ### 2. Datasets Used
@@ -79,6 +82,10 @@ The `utils/` folder is included as a Git submodule and contains a reusable funct
 The cleaned dataset powers an interactive Tableau Public dashboard of household cashflow. Analysis can be conducted through date ranges, income/expense type, and spender to reveal monthly trends and breakdowns.
 
 Please view the dashboard here: [*Household Cashflow Analyzer*](https://public.tableau.com/app/profile/leo.peng.ningchuan/viz/HouseholdCashflowAnalyzer/sy)
+
+### 9. Sankey Chart
+The project includes a fully automated Sankey chart that visualizes the complete flow of household cash. It transforms raw income and expense records into an intuitive flow diagram showing where money comes from and how it is allocated across fixed costs, variable costs, and savings or losses. The chart helps reveal spending structure, category weights, and potential inefficiencies, making monthly financial patterns easier to interpret at a glance.
+![*Household Cash Flow Sankey Chart: 2025-09-01~2025-09-30*](images/instructions-9_20251203.png)
 
 ## Future Improvements
 - **Automated Data Ingestion**: Implement scripts to directly download PDF or XLSX statements and update the dataset without manual operation.
