@@ -85,7 +85,7 @@ Please view the dashboard here: [*Household Cashflow Analyzer*](https://public.t
 
 ### 9. Sankey Chart
 The project includes a fully automated Sankey chart that visualizes the complete flow of household cash. It transforms raw income and expense records into an intuitive flow diagram showing where money comes from and how it is allocated across fixed costs, variable costs, and savings or losses. The chart helps reveal spending structure, category weights, and potential inefficiencies, making monthly financial patterns easier to interpret at a glance.
-![*Household Cash Flow Sankey Chart: 2025-09-01~2025-09-30*](images/instructions-9_20251203.png)
+![*Household Cash Flow Sankey Chart: 2025-09-01~2025-09-30*](images/instructions-9_20251203.jpg)
 
 ## Future Improvements
 - **Automated Data Ingestion**: Implement scripts to directly download PDF or XLSX statements and update the dataset without manual operation.
